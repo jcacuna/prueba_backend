@@ -83,8 +83,6 @@ export const obtenerUsuarios = async (req, res) => {
 };
 
 // GET /usuarios/buscar?ciudad=Lima
-// NOTA: esta ruta debe declararse en el router ANTES de /usuarios/:id
-// para que Express no interprete "buscar" como un :id.
 export const buscarUsuariosPorCiudad = async (req, res) => {
   try {
     const { ciudad } = req.query;
