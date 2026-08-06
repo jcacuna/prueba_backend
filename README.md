@@ -119,7 +119,7 @@ El servidor quedará escuchando en `http://localhost:3000/`.
 | Método | Ruta                                                                                  | Descripción                                          |
 |--------|---------------------------------------------------------------------------------------|------------------------------------------------------|
 | POST   | `http://localhost:3000/api/usuarios`                                                  | Crea un nuevo usuario                                |
-| GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios?pagina=1&limite=10`           | Lista usuarios (soporta paginación)                  |
+| GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios?pagina=1&limite=10`            | Lista usuarios (soporta paginación)                  |
 | GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios/buscar?ciudad=X`               | Busca usuarios con una dirección en la ciudad `X`    |
 | GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios/ID`                            | Obtiene un usuario por su ID                         |
 | PUT    | `https://prueba-backend-4js1.onrender.com/api/usuarios/ID`                            | Actualiza un usuario por su ID                       |
