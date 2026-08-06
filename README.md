@@ -114,7 +114,7 @@ El servidor quedará escuchando en `http://localhost:3000/`.
 | DELETE | `api/usuarios/:id`             | Elimina un usuario por su ID                         |
 
 
-## Endpoints en render (SIMULACIÓN DE PRODUCIÓN)
+## Endpoints en render (SIMULACIÓN DE PRODUCIÓN) - https://prueba-backend-4js1.onrender.com/api-docs/
 
 | Método | Ruta                                                                                  | Descripción                                          |
 |--------|---------------------------------------------------------------------------------------|------------------------------------------------------|
