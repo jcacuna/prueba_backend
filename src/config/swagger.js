@@ -9,11 +9,15 @@ const swaggerDefinition = {
     description: 'Documentación de la API REST de usuarios con Node.js, Express y MongoDB',
   },
   servers: [
-    {
-      url: 'http://localhost:3000/api', 
-      description: 'Servidor de desarrollo',
-    },
-  ],
+  {
+    url: '/api',
+    description: 'Servidor actual (auto)',
+  },
+  {
+    url: 'http://localhost:3000/api',
+    description: 'Desarrollo local',
+  },
+],
   components: {
     schemas: {
       Direccion: {
