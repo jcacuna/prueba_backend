@@ -16,6 +16,7 @@ prueba-backend/
 ├── src/
 │   ├── config/
 │   │   └── db.js               # Conexión a MongoDB
+|   |   └── swagger.js          #configuración documentación
 │   ├── controllers/
 │   │   └── usuarioController.js # Lógica de negocio y validaciones
 │   ├── middlewares/
@@ -80,7 +81,7 @@ prueba-backend/
   npm start
   ```
 
-El servidor quedará escuchando en `http://localhost:3000`.
+El servidor quedará escuchando en `http://localhost:3000/`.
 
 ## Modelo de Usuario
 
@@ -101,23 +102,35 @@ El servidor quedará escuchando en `http://localhost:3000`.
 }
 ```
 
-## Endpoints
+## Endpoints en local 
 
 | Método | Ruta                        | Descripción                                        |
 |--------|-----------------------------|-----------------------------------------------------|
-| POST   | `/usuarios`                 | Crea un nuevo usuario                                |
-| GET    | `/usuarios`                 | Lista usuarios (soporta paginación)                  |
-| GET    | `/usuarios/buscar?ciudad=X` | Busca usuarios con una dirección en la ciudad `X`    |
-| GET    | `/usuarios/:id`             | Obtiene un usuario por su ID                         |
-| PUT    | `/usuarios/:id`             | Actualiza un usuario por su ID                       |
-| DELETE | `/usuarios/:id`             | Elimina un usuario por su ID                         |
+| POST   | `api/usuarios`                 | Crea un nuevo usuario                                |
+| GET    | `api/usuarios`                 | Lista usuarios (soporta paginación)                  |
+| GET    | `api/usuarios/buscar?ciudad=X` | Busca usuarios con una dirección en la ciudad `X`    |
+| GET    | `api/usuarios/:id`             | Obtiene un usuario por su ID                         |
+| PUT    | `api/usuarios/:id`             | Actualiza un usuario por su ID                       |
+| DELETE | `api/usuarios/:id`             | Elimina un usuario por su ID                         |
+
+
+## Endpoints en render (SIMULACIÓN DE PRODUCIÓN)
+
+| Método | Ruta                                                                                  | Descripción                                          |
+|--------|---------------------------------------------------------------------------------------|------------------------------------------------------|
+| POST   | `http://localhost:3000/api/usuarios`                                                  | Crea un nuevo usuario                                |
+| GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios?pagina=1&limite=10`           | Lista usuarios (soporta paginación)                  |
+| GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios/buscar?ciudad=X`               | Busca usuarios con una dirección en la ciudad `X`    |
+| GET    | `https://prueba-backend-4js1.onrender.com/api/usuarios/ID`                            | Obtiene un usuario por su ID                         |
+| PUT    | `https://prueba-backend-4js1.onrender.com/api/usuarios/ID`                            | Actualiza un usuario por su ID                       |
+| DELETE | `https://prueba-backend-4js1.onrender.com/api/usuarios/ID`                            | Elimina un usuario por su ID                         |
 
 ### Ejemplos de uso
 
 #### Crear usuario
 
 ```bash
-curl -X POST http://localhost:3000/usuarios \
+curl -X POST http://localhost:3000/api/usuarios/ \
   -H "Content-Type: application/json" \
   -d '{
     "nombre": "Juan Pérez",
@@ -137,7 +150,7 @@ curl -X POST http://localhost:3000/usuarios \
 #### Listar usuarios (con paginación)
 
 ```bash
-curl "http://localhost:3000/usuarios?pagina=1&limite=10"
+curl "http://localhost:3000/api/usuarios?pagina=1&limite=10"
 ```
 
 Respuesta:
@@ -155,13 +168,13 @@ Respuesta:
 #### Obtener usuario por ID
 
 ```bash
-curl http://localhost:3000/usuarios/<ID>
+curl http://localhost:3000/api/usuarios/<ID>
 ```
 
 #### Actualizar usuario
 
 ```bash
-curl -X PUT http://localhost:3000/usuarios/<ID> \
+curl -X PUT http://localhost:3000/api/usuarios/<ID> \
   -H "Content-Type: application/json" \
   -d '{ "edad": 29 }'
 ```
@@ -169,13 +182,13 @@ curl -X PUT http://localhost:3000/usuarios/<ID> \
 #### Eliminar usuario
 
 ```bash
-curl -X DELETE http://localhost:3000/usuarios/<ID>
+curl -X DELETE http://localhost:3000/api/usuarios/<ID>
 ```
 
 #### Buscar usuarios por ciudad
 
 ```bash
-curl "http://localhost:3000/usuarios/buscar?ciudad=Lima"
+curl "http://localhost:3000/api/usuarios/buscar?ciudad=Lima"
 ```
 
 ## Validaciones y manejo de errores

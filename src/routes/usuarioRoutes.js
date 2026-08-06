@@ -24,7 +24,7 @@ const router = Router();
  *           type: string
  *         required: true
  *         description: Nombre de la ciudad a buscar
- *         example: Barranquilla
+ *         example: Bogotá
  *     responses:
  *       200:
  *         description: Lista de usuarios encontrados
@@ -68,7 +68,7 @@ router.get('/buscar', buscarUsuariosPorCiudad);
  *             edad: 28
  *             direcciones:
  *               - calle: "Av. Arequipa 1234"
- *                 ciudad: "Barranquilla"
+ *                 ciudad: "Bogotá"
  *                 pais: "Colombia"
  *                 codigo_postal: "15001"
  *     responses:
@@ -207,7 +207,7 @@ router.get('/:id', obtenerUsuarioPorId);
  *             edad: 29
  *             direcciones:
  *               - calle: "Nueva Calle 456"
- *                 ciudad: "Arequipa"
+ *                 ciudad: "Bogotá"
  *                 pais: "Colombia"
  *     responses:
  *       200:
